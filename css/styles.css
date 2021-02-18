@@ -38,6 +38,12 @@
   overflow: hidden;
 }
 
+*:focus {
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-color: var(--accent-color);
+}
+
 /* Снятие подчеркивания с ссылок*/
 a {
   text-decoration: none;
@@ -77,6 +83,12 @@ body {
   letter-spacing: 0.03em;
   color: var(--main-txt-color);
   background-color: var(--main-bg-color);
+}
+
+section,
+header,
+footer {
+  max-width: 1600px;
 }
 
 section {
@@ -421,6 +433,12 @@ button {
 .portfolio-button-list button:focus {
   color: var(--current-text-color);
   background-color: var(--current-bg-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-button-list button:focus {
+  outline: 1px dotted #000;
 }
 
 /* Текстовое оформление названий выполненых работ секции "Портфолио" */
@@ -543,11 +561,7 @@ button {
   fill: currentColor;
 }
 
-.person-container .svg-container:hover {
-  color: var(--current-text-color);
-  background-color: var(--accent-color);
-}
-
+.person-container .svg-container:hover,
 .person-container .svg-container:focus {
   color: var(--current-text-color);
   background-color: var(--accent-color);
@@ -565,9 +579,17 @@ button {
   border: 1px solid #afb1b8;
 }
 
-.clients-list .svg-container:hover {
+.clients-list .svg-container:hover,
+.clients-list .svg-container:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
+}
+
+.person-container .svg-container:focus,
+.clients-list .svg-container:focus,
+.card > .card-link:focus,
+.footer .svg-container:focus {
+  outline: none;
 }
 
 .clients-list .icon {
@@ -584,7 +606,6 @@ button {
   margin-top: 12px;
   width: 206px;
   max-height: 80px;
-  /* outline: 1px solid tomato; */
 }
 
 .footer .agitation-title {
@@ -614,7 +635,8 @@ button {
   color: var(--current-text-color);
 }
 
-.footer .svg-container:hover {
+.footer .svg-container:hover,
+.footer .svg-container:focus {
   background-color: var(--accent-color);
 }
 
@@ -633,15 +655,12 @@ button {
   margin-right: 70px;
 }
 
-.card > .card-link:hover {
+.card > .card-link {
   display: block;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.card > .card-link:hover,
 .card > .card-link:focus {
-  display: block;
-  outline: none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }

@@ -369,8 +369,6 @@ button {
 
 /* Оформление вертикальных отступов текстовой части карточки */
 .person .person-container {
-  /* padding-top: 30px;
-  padding-bottom: 30px; */
   padding: 30px 32px;
 }
 

@@ -530,11 +530,6 @@ button {
   border: none;
 }
 
-.advantages-list .icon {
-  width: 70px;
-  height: 70px;
-}
-
 .social-networks-list,
 .clients-list {
   display: flex;
@@ -553,12 +548,6 @@ button {
   border: none;
   border-radius: 50%;
   color: #afb1b8;
-}
-
-.person-container .icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
 }
 
 .person-container .svg-container:hover,
@@ -592,6 +581,10 @@ button {
   outline: none;
 }
 
+.header-mail .icon,
+.header-tel .icon,
+.person-container .icon,
+.footer .icon,
 .clients-list .icon {
   fill: currentColor;
 }
@@ -599,7 +592,6 @@ button {
 .header-mail .icon,
 .header-tel .icon {
   margin-right: 10px;
-  fill: currentColor;
 }
 
 .footer .agitation-container {
@@ -640,12 +632,6 @@ button {
   background-color: var(--accent-color);
 }
 
-.footer .icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
 .footer .container {
   display: flex;
   flex-wrap: wrap;
@@ -668,6 +654,7 @@ button {
 /*
  * Проверка размещения контента с помощью рамки outline
  */
+
 /* * div,
 * ul,
 * li,

@@ -11,6 +11,7 @@
   --third-txt-color: rgba(255, 255, 255, 0.6);
   --main-bg-color: #fff;
   --secondary-bg-color: #2f303a;
+  --third-bg-color: #f5f4fa;
 
   /* Имена и семейство используемых шрифтов */
   --main-font-name: 'Roboto';
@@ -83,6 +84,10 @@ section {
   padding-bottom: 94px;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Задание базовых значений блочной модели основному контейнеру секций */
 .container {
   width: 1200px;
@@ -96,15 +101,28 @@ section {
  * Оформление стилей страниц 
  */
 
-/* Задание фона блокам hero и footer */
-.hero,
+/* Задание фона блоку footer */
 .footer {
   background-color: var(--secondary-bg-color);
 }
 
+/* Задание фона блоку hero */
+.hero {
+  background-color: #c4c4c4;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/img-bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Задание фона блоку team */
 .team {
-  background-color: #f5f4fa;
+  background-color: var(--third-bg-color);
 }
 
 /* Оформление логотипа в header и footer */
@@ -131,15 +149,24 @@ section {
 }
 
 /* установка меджуелементных интервалов навигации и контактов в header */
-.navigation-list li:not(:first-child),
-.header-contacts-list li:not(:first-child) {
+.navigation-list li:not(:first-child) {
   margin-left: 50px;
+}
+
+.header-contacts-list li:not(:first-child) {
+  margin-left: 30px;
 }
 
 /* оформление flex-ом и позиционирование контактов в header */
 .header-contacts-list {
   display: flex;
   margin-left: auto;
+}
+
+.header-contacts-list .header-mail,
+.header-contacts-list .header-tel {
+  display: flex;
+  align-items: center;
 }
 
 /* Оформление лого и навигации в header flex-ом в один ряд */
@@ -285,7 +312,8 @@ section {
 
 /* Нижний отступ от заголовков Чем мы занимаемся и Наша команда */
 .case-title,
-.team-title {
+.team-title,
+.clients-title {
   margin-bottom: 50px;
 }
 
@@ -297,7 +325,8 @@ section {
 
 /* Текстовое формление заголовков в секциях "Чем мы занимаемся" и "Наша команда" */
 .case-title,
-.team-title {
+.team-title,
+.clients-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -328,8 +357,9 @@ section {
 
 /* Оформление вертикальных отступов текстовой части карточки */
 .person .person-container {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
+  padding: 30px 32px;
 }
 
 /* Оформление имен в секции "Наша команда" */
@@ -343,6 +373,7 @@ section {
 
 /* Оформление именования должностей в секции "Наша команда" */
 .person .position {
+  margin-bottom: 16px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
@@ -366,7 +397,7 @@ section {
   letter-spacing: 0.03em;
   color: var(--main-txt-color);
   text-align: center;
-  background-color: #f5f4fa;
+  background-color: var(--third-bg-color);
   border-style: none;
   border-radius: 4px;
 }
@@ -399,6 +430,7 @@ section {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  color: var(--main-txt-color);
 }
 
 /* Текстовое оформление именования категории выполненых работ секции "Портфолио" */
@@ -425,13 +457,13 @@ section {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 /* Отступы текста в карточке */
 .card .card-container {
   padding: 20px 24px;
-  border: 1px solid #eeeeee;
+  border: 1px solid #eee;
   border-top: none;
 }
 
@@ -466,6 +498,152 @@ section {
   font-size: 14px;
   line-height: 1.71;
   color: var(--third-txt-color);
+}
+
+.advantages .svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: var(--third-bg-color);
+  border-radius: 4px;
+  border: none;
+}
+
+.advantages-list .icon {
+  width: 70px;
+  height: 70px;
+}
+
+.social-networks-list,
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.person-container .svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #afb1b8;
+}
+
+.person-container .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.person-container .svg-container:hover {
+  color: var(--current-text-color);
+  background-color: var(--accent-color);
+}
+
+.person-container .svg-container:focus {
+  color: var(--current-text-color);
+  background-color: var(--accent-color);
+}
+
+.clients .svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  color: #afb1b8;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #afb1b8;
+}
+
+.clients-list .svg-container:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.clients-list .icon {
+  fill: currentColor;
+}
+
+.header-mail .icon,
+.header-tel .icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.footer .agitation-container {
+  margin-top: 12px;
+  width: 206px;
+  max-height: 80px;
+  /* outline: 1px solid tomato; */
+}
+
+.footer .agitation-title {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--current-text-color);
+}
+
+.footer .social-networks-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer .svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: var(--current-text-color);
+}
+
+.footer .svg-container:hover {
+  background-color: var(--accent-color);
+}
+
+.footer .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address-container {
+  margin-right: 70px;
+}
+
+.card > .card-link:hover {
+  display: block;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.card > .card-link:focus {
+  display: block;
+  outline: none;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /*

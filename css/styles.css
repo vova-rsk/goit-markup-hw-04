@@ -38,6 +38,7 @@
   overflow: hidden;
 }
 
+/* Задаем тип и параметры линии обводки при фокусе для всех активных елементов по умолчанию */
 *:focus {
   outline-width: 1px;
   outline-style: dotted;
@@ -85,17 +86,20 @@ body {
   background-color: var(--main-bg-color);
 }
 
+/* Задаем секциям, футеру и хедеру максимальной ширины */
 section,
 header,
 footer {
   max-width: 1600px;
 }
 
+/* Задаем секциям вертикальные паддинги согласно макету */
 section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
+/* Задаем всем кнопкам тип курсора при наведении */
 button {
   cursor: pointer;
 }
@@ -413,13 +417,13 @@ button {
 }
 
 /* Стилизация активированной кнопки "Все" секции "Портфолио" */
-.portfolio-button-list .button-all {
+/* .portfolio-button-list .button-all {
   color: var(--current-text-color);
   background-color: var(--current-bg-color);
   border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-}
+} */
 
 /* Задание интервалов между кнопок секции "Портфолио" */
 .portfolio-button-list > li:not(:last-child) {
@@ -483,6 +487,11 @@ button {
   border-top: none;
 }
 
+/* Задаем ссылкам карточек в портфолио блочный тип, чтоб использовать украшательства */
+.card > .card-link {
+  display: block;
+}
+
 /* Оформленеие вертикальных отступов основного контейнера в footer */
 .footer {
   padding-top: 60px;
@@ -508,6 +517,10 @@ button {
   color: #fff;
 }
 
+.address-container {
+  margin-right: 70px;
+}
+
 /* Текстовое оформление контактных ссылок в footer */
 .footer-contacts-list a {
   font-weight: 400;
@@ -516,10 +529,18 @@ button {
   color: var(--third-txt-color);
 }
 
-.advantages .svg-container {
+/* Задаем flex и центрирование контейнерам с иконками из svg-спрайта */
+.advantages .svg-container,
+.person-container .svg-container,
+.clients .svg-container,
+.footer .svg-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Задание параметров контейнера с иконками преимуществ */
+.advantages .svg-container {
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
@@ -528,6 +549,7 @@ button {
   border: none;
 }
 
+/* Фофрмление горизонтального размещения контейнеров с иконками сецсетей/лого клиентов */
 .social-networks-list,
 .clients-list {
   display: flex;
@@ -536,10 +558,8 @@ button {
   list-style: none;
 }
 
+/* Задание параметров контейнера с иконками соцсетей в карточках сотрудников */
 .person-container .svg-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 44px;
   height: 44px;
   background-color: transparent;
@@ -548,16 +568,15 @@ button {
   color: #afb1b8;
 }
 
+/* Эффекты смены цвета и фона при ховере и фокусе */
 .person-container .svg-container:hover,
 .person-container .svg-container:focus {
   color: var(--current-text-color);
   background-color: var(--accent-color);
 }
 
+/* Задание параметров контейнера с лого постоянных клиентов */
 .clients .svg-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 170px;
   height: 90px;
   color: #afb1b8;
@@ -566,12 +585,15 @@ button {
   border: 1px solid #afb1b8;
 }
 
+/* Задаем смену цвета лого и рамки при hover и focus */
 .clients-list .svg-container:hover,
 .clients-list .svg-container:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
+/* Снимаем рамку выделения при focus на тех елементах где происходят явные цветовые изменения */
+.portfolio-button-list button:focus,
 .person-container .svg-container:focus,
 .clients-list .svg-container:focus,
 .card > .card-link:focus,
@@ -579,6 +601,7 @@ button {
   outline: none;
 }
 
+/* Подтягивания цвета иконок (цвет зависит от состояния контейнера в конкретный момент) */
 .header-mail .icon,
 .header-tel .icon,
 .person-container .icon,
@@ -587,17 +610,20 @@ button {
   fill: currentColor;
 }
 
+/* Задания отступа */
 .header-mail .icon,
 .header-tel .icon {
   margin-right: 10px;
 }
 
+/* Задание размеров и верхнего отступа контейнеру ПРИСОЕДИНЯЙТЕСЬ в footer */
 .footer .agitation-container {
   margin-top: 12px;
   width: 206px;
   max-height: 80px;
 }
 
+/* Окультуривание слова ПРИСОЕДИНЯЙТЕСЬ */
 .footer .agitation-title {
   margin-bottom: 20px;
   font-weight: 400;
@@ -608,41 +634,35 @@ button {
   color: var(--current-text-color);
 }
 
+/* Обнуление вертикальных margin списка соцсетей в footer */
 .footer .social-networks-list {
   margin-top: 0;
   margin-bottom: 0;
 }
 
+/* Задание параметров контейнеру с иконками сецсетей в footer */
 .footer .svg-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 44px;
   height: 44px;
+  color: var(--current-text-color);
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
-  color: var(--current-text-color);
 }
 
+/* Эффект смены беграунд-фона при ховере и фокусе */
 .footer .svg-container:hover,
 .footer .svg-container:focus {
   background-color: var(--accent-color);
 }
 
+/* Задаем flex контейнеру в footer чтоб разделить контент на 2 части по горизонтали */
 .footer .container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.address-container {
-  margin-right: 70px;
-}
-
-.card > .card-link {
-  display: block;
-}
-
+/* Эффект тени при ховере и фокусе на карточке в портфолио */
 .card > .card-link:hover,
 .card > .card-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
